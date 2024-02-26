@@ -1,2 +1,2 @@
 # leetcode-problems
-Repo for leetcode problems in python
+New repo for leetcode problems in using python and Java on occasion
