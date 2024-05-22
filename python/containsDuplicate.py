@@ -1,15 +1,14 @@
 def containsDuplicate(self, nums: List[int]) -> bool:
-    # init hashmap, store numbers in a set for less memory usage!!!
-    #amortized O(1) look up by hashing
-    map = {}
+    # init a map
+    counter = {}
+    #loop through list
+    for i in nums:
 
-    #loop through array
-    for i in range(len(nums)):
-        #if we seen any of the elements before return false
-        if nums[i] in map:
+        # if element exist in map return true
+        if i in counter:
             return True
-        else:
-            map[nums[i]] = i
-
-    
-    return False
+        #count of 1 in map for an elemnt that is found
+        counter[i] = 1
+    #if we complete the entire loop without returning true then all elements are distinct
+    return False  
+    # another way to solve this is comparing length ofd the inout list as a set with the length of the list for a faster runtime
