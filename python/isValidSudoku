@@ -1,0 +1,28 @@
+def isValidSudoku(self, board: List[List[str]]) -> bool:
+    # horizontal solution
+    horiz = set()
+
+    # vertical solution
+    vert = set()
+    for i in range(9):
+        for j in range(9):
+            if board[i][j] == ".":
+                continue
+            if j == 0:
+                if board[i][j] in vert:
+                    return False
+                vert.add(board[i][j])
+            if board[i][j] in horiz:
+                return False
+            horiz.add(board[i][j])
+        horiz = set()
+    return True
+
+boxes = [() for i in range (9)]
+
+for i in range(9):
+    for j in range(9):
+        if board[i][j] == "." or i//3 != j//3:
+            continue
+        # if board[i][j] in boxes[i//3]:
+        #     return False
