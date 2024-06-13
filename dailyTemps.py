@@ -1,27 +1,23 @@
-
 def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
 
     stack = []
-    i = 0
-    count = 0
-    res = []
+    array = [0]*len(temperatures)
 
-    while i <= len(temperatures):
+    for i in range(len(temperatures)):
+        
         if i == len(temperatures)-1:
-            res.append(0)
-            return res
-        count+=1
-        if not stack and temperatures[i+1] >  temperatures[i]:
-            res.append(count)
-            count = 0
-        elif stack and temperatures[i+1] >  temperatures[i]:
-            while stack[-1]<  temperatures[i]:
-                stack.pop()
-                count+=1
-            res.append(count)
-            
-        i+=1
+            break
+
+        print(stack)
+        while stack and stack[-1][0] < temperatures[i]:
+            res = stack.pop()
+            array[res[1]] = i - res[1]
     
+
+
+        stack.append([temperatures[i], i])
+        
+    return array
 
 
         
