@@ -1,4 +1,4 @@
-evalRPN(self, tokens: List[str]) -> int:
+def evalRPN(self, tokens: List[str]) -> int:
         
         stack =[]
         operator_map = {
