@@ -41,6 +41,7 @@ class Solution:
             current.next = ListNode(value)
             current = current.next
         
+        
         return head
         
 
