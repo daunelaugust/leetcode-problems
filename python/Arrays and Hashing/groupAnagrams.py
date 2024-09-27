@@ -1,3 +1,5 @@
+from typing import List, DefaultDict
+from collections import defaultdict
 def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
 #     #Initialize a map
 
@@ -30,4 +32,15 @@ def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         maps[tuple(array)].append(i)
 
     return list(maps.values())
+
+if __name__ == '__main__':
+    
+    strs = ["act","pots","tops","cat","stop","hat"]
+
+    res = groupAnagrams(list, strs)
+
+    print(res)
+
+
+
     
