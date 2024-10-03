@@ -23,15 +23,18 @@ def isAnagram(self, s: str, t: str) -> bool:
     # # compares both string contents, using 'is' compares if its the same object instead
     # return str1 == str2
 
-    #redo on 07/27/24
+    # redo on 07/27/24
     if len(s) != len(t):
         return False
     map1 = {}
     map2 = {}
     for i in s:
-        map1[i] = map1.get(i,0)+1
+        map1[i] = map1.get(i, 0) + 1
 
     for i in t:
-        map2[i] = map2.get(i,0)+1
-    
+        map2[i] = map2.get(i, 0) + 1
+
     return map1 == map2
+
+
+# test
