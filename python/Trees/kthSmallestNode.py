@@ -1,19 +1,22 @@
 def kthSmallest(self, root: Optional[TreeNode], k: int) -> int:
 
-    def dfs(root, k, kValues):
+    self.counts = 0
+    self.rootVal = None
+
+    def dfs(root,k):
 
         if root is None:
             return
+        
 
-        if len(kValues) == k:
-            return kValues
-
-        left = dfs(root.left, k, kValues)
-        kValues.append(root.val)
-        right = dfs(root.right, k, kValues)
-
-    values = []
-
-    dfs(root, k, values)
-
-    return values[k - 1] if values else 0
+            
+        dfs(root.left,k)
+        self.counts+=1
+        if self.counts == k and not self.rootVal:
+            self.rootVal = root.val
+        elif self.rootVal:
+            return
+        dfs(root.right,k)
+    
+    dfs(root,k)
+    return self.rootVal if self.rootVal else 0
